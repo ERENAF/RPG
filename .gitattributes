@@ -1,0 +1,14 @@
+# Unity YAML файлы
+*.unity binary
+*.prefab binary
+*.asset binary
+*.mat binary
+*.physicsMaterial2D binary
+*.physicsMaterial binary
+
+# Текстовые файлы
+*.txt text
+*.md text
+*.json text
+*.yml text
+*.yaml text
