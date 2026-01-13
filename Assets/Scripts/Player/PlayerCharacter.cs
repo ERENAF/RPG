@@ -23,6 +23,14 @@ public class PlayerCharacter : Character
         }
     }
 
+    void Start()
+    {
+        for (int i = 0 ; i < items.Count; i++)
+        {
+            items[i].OnEquip(this);
+        }
+    }
+
     /*currxp*/
 
     public int GetCurrXP()
