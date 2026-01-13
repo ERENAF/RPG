@@ -1,19 +1,19 @@
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "MagicStick", menuName = "Items/MagicStick")]
-public class MagicStick : Item
+[CreateAssetMenu(fileName = "ItemWithOnlyStatUpgrade", menuName = "Items/Equipment/ItemWithOnlyStatUpgrade")]
+public class ItemWithStatUpgrade : Item
 {
-    [Header("Magic Stick config")]
+    [Header(" config")]
 
-    public int magicUp;
+    public Upgrade upgrade;
 
     public override void OnEquip(PlayerCharacter character)
     {
-        character.IncreaseMagic(magicUp);
+        character.IncreaseStats(upgrade);
     }
     public override void OnUnequip(PlayerCharacter character)
     {
-        character.DecreaseMagic(magicUp);
+        character.DecreaseStats(upgrade);
     }
     public override bool CanUse(PlayerCharacter character)
     {

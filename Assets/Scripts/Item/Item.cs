@@ -14,7 +14,8 @@ public enum UseType
 {
     active,
     passive,
-    weapon
+    weapon,
+    questItem
 }
 
 public abstract class Item : ScriptableObject

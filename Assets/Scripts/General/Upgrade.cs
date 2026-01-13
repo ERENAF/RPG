@@ -1,6 +1,7 @@
 using UnityEngine;
 
-public class LevelUpgrade : MonoBehaviour
+[CreateAssetMenu(fileName = "Upgrade",menuName = "Upgrade")]
+public class Upgrade : ScriptableObject
 {
     [SerializeField] public int changeAtk;
     [SerializeField] public int changeMaxHP;

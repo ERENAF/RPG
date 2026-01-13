@@ -3,12 +3,12 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class DoorInteractable : InteractableObject
+public class Door : InteractableObject
 {
     [Header("Door's config")]
 
     public DoorTrigger doorTrigger;
-
+    public QuestItem key;
     public KeyCode interactKey = KeyCode.F;
     public int SceneNum = -1;
     public string SceneStr;
@@ -24,11 +24,21 @@ public class DoorInteractable : InteractableObject
         {
             if (Input.GetKeyDown(interactKey))
             {
-                DoorInteracting();
+                if (FindAnyObjectByType<PlayerCharacter>().items.Contains(key) || key == null)
+                {
+                    DoorInteracting();
+                }
+                else
+                {
+                    NotKeyInteracting();
+                }
             }
         }
     }
-
+    public void NotKeyInteracting()
+    {
+        Debug.Log("Нет Ключа");
+    }
     public void DoorInteracting()
     {
         if (SceneNum >= 0)

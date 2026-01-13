@@ -9,12 +9,12 @@ using UnityEngine.UIElements;
 public class PlayerCharacter : Character
 {
     [Header("PlayerSetting")]
-    [SerializeField] private List<Item> items;
+    [SerializeField] public List<Item> items;
     [SerializeField] private int currxp;
     [SerializeField] private int maxXP;
     [SerializeField] private int currmana;
     [SerializeField] private int maxmana;
-    [SerializeField] private List<LevelUpgrade> levelUpgrades = new List<LevelUpgrade>();
+    [SerializeField] private List<Upgrade> levelUpgrades = new List<Upgrade>();
     protected override void Death()
     {
         if (IsDead())
@@ -85,6 +85,41 @@ public class PlayerCharacter : Character
             IncreaseMagic(levelUpgrades[level-1].changeMagic);
             GetFullMana();
         }
+    }
+
+    public void IncreaseStats(Upgrade upgrade)
+    {
+        if (upgrade.changeArmor >= 0)IncreaseArmor(upgrade.changeArmor);
+        else DecreaseArmor(upgrade.changeArmor);
+
+        if (upgrade.changeAtk >= 0) IncreaseAtk(upgrade.changeAtk);
+        else DecreaseAtk(upgrade.changeAtk);
+
+        if (upgrade.changeMagic >= 0) IncreaseMagic(upgrade.changeMagic);
+        else DecreaseMagic(upgrade.changeMagic);
+
+        if (upgrade.changeMaxHP >= 0) IncreaseMaxHP(upgrade.changeMaxHP);
+        else DecreaseMaxHP(upgrade.changeMaxHP);
+
+        if (upgrade.changeMaxMana >= 0) IncreaseMaxMana(upgrade.changeMaxMana);
+        else DecreaseMaxMana(upgrade.changeMaxMana);
+    }
+    public void DecreaseStats(Upgrade upgrade)
+    {
+        if (upgrade.changeArmor < 0)IncreaseArmor(upgrade.changeArmor);
+        else DecreaseArmor(upgrade.changeArmor);
+
+        if (upgrade.changeAtk < 0) IncreaseAtk(upgrade.changeAtk);
+        else DecreaseAtk(upgrade.changeAtk);
+
+        if (upgrade.changeMagic < 0) IncreaseMagic(upgrade.changeMagic);
+        else DecreaseMagic(upgrade.changeMagic);
+
+        if (upgrade.changeMaxHP < 0) IncreaseMaxHP(upgrade.changeMaxHP);
+        else DecreaseMaxHP(upgrade.changeMaxHP);
+
+        if (upgrade.changeMaxMana < 0) IncreaseMaxMana(upgrade.changeMaxMana);
+        else DecreaseMaxMana(upgrade.changeMaxMana);
     }
 
     /*mana*/

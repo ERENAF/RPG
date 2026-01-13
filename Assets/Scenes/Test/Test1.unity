@@ -1254,6 +1254,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DoorInteractable
   state: 0
   doorTrigger: {fileID: 1714580024}
+  key: {fileID: 11400000, guid: 8f1943e84522a29438cda6e7e1e3143c, type: 2}
   interactKey: 102
   SceneNum: -1
   SceneStr: Test2
