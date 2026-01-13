@@ -1,10 +1,18 @@
+using Unity.VisualScripting;
 using UnityEngine;
+
+public enum StateOfInteractableObject
+{
+    Interactable,
+    NotInteractable,
+}
 
 public abstract class InteractableObject : MonoBehaviour
 {
-    [Header("ItemSetting")]
+    [Header("Configs of Interactable object")]
+    public StateOfInteractableObject state;
 
-    public string itemName;
-    public string description;
+    public virtual void Interact(){}
+    protected virtual bool IsAbleToInteract(){return false;}
 
 }
