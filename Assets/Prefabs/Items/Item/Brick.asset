@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc1113bf7feb1b743852afa5f6021571, type: 3}
+  m_Name: Brick
+  m_EditorClassIdentifier: Assembly-CSharp::ItemWithStatUpgrade
+  itemname: Brick
+  description: 
+  rarity: 0
+  useType: 1
+  dropItem: {fileID: 0}
+  charges: 0
+  maxChargers: 0
+  upgrade: {fileID: 0}

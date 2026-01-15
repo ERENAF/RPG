@@ -23,14 +23,6 @@ public class PlayerCharacter : Character
         }
     }
 
-    void Start()
-    {
-        for (int i = 0 ; i < items.Count; i++)
-        {
-            items[i].OnEquip(this);
-        }
-    }
-
     /*currxp*/
 
     public int GetCurrXP()
@@ -177,10 +169,13 @@ public class PlayerCharacter : Character
     public void AddItem(Item item)
     {
         items.Add(item);
+        item.OnEquip(this);
     }
 
     public void DropItem(Item item)
     {
         items.Remove(items.FindLast(i=>i==item));
+        item.DropItem();
+        item.OnUnequip(this);
     }
 }

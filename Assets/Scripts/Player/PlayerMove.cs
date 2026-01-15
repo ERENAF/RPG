@@ -10,7 +10,6 @@ public class PlayerMove : MonoBehaviour
     [SerializeField] float speed = 10f;
     private Animator animator;
     private Vector2 lastMovement = Vector2.zero;
-    private bool isMoving = false;
 
     void Start()
     {
