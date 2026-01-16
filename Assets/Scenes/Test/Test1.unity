@@ -877,7 +877,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DoorInteractable
   state: 0
-  doorTrigger: {fileID: 1714580024}
+  trigger: {fileID: 0}
   key: {fileID: 11400000, guid: 8f1943e84522a29438cda6e7e1e3143c, type: 2}
   interactKey: 102
   SceneNum: -1
@@ -1044,6 +1044,22 @@ PrefabInstance:
     - target: {fileID: 2450245873982152614, guid: 6b1573acf18e3cb488bfbd21ef72eeca, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 3660440322333737690, guid: 6b1573acf18e3cb488bfbd21ef72eeca, type: 3}
+      propertyPath: inventory
+      value: 
+      objectReference: {fileID: 11400000, guid: 5a05e36b6ebf6d142a32457a9ebc8337, type: 2}
+    - target: {fileID: 3660440322333737690, guid: 6b1573acf18e3cb488bfbd21ef72eeca, type: 3}
+      propertyPath: items.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3660440322333737690, guid: 6b1573acf18e3cb488bfbd21ef72eeca, type: 3}
+      propertyPath: 'items.Array.data[1]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 8f1943e84522a29438cda6e7e1e3143c, type: 2}
+    - target: {fileID: 3660440322333737690, guid: 6b1573acf18e3cb488bfbd21ef72eeca, type: 3}
+      propertyPath: levelUpgrades.Array.size
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6173511054410377394, guid: 6b1573acf18e3cb488bfbd21ef72eeca, type: 3}
       propertyPath: m_LocalPosition.x

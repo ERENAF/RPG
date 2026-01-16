@@ -10,11 +10,13 @@ public enum Rarity
     Legendary
 }
 
-public enum UseType
+public enum ItemType
 {
     active,
     passive,
     weapon,
+    equipment,
+    consumable,
     questItem
 }
 
@@ -24,7 +26,7 @@ public abstract class Item : ScriptableObject
     public string itemname;
     public string description;
     public Rarity rarity = Rarity.Common;
-    public UseType useType = UseType.passive;
+    public ItemType type = ItemType.passive;
     public GameObject dropItem;
     public int charges = 0;
     public int maxChargers = 0;

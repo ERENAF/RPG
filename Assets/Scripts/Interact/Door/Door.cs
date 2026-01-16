@@ -7,7 +7,6 @@ public class Door : InteractableObject
 {
     [Header("Door's config")]
 
-    public DoorTrigger doorTrigger;
     public QuestItem key;
     public KeyCode interactKey = KeyCode.F;
     public int SceneNum = -1;
@@ -24,7 +23,7 @@ public class Door : InteractableObject
         {
             if (Input.GetKeyDown(interactKey))
             {
-                if (FindAnyObjectByType<PlayerCharacter>().items.Contains(key) || key == null)
+                if (FindAnyObjectByType<PlayerCharacter>().inventory.FindListItem(key).Contains(key) || key == null)
                 {
                     DoorInteracting();
                 }
@@ -54,6 +53,6 @@ public class Door : InteractableObject
 
     protected override bool IsAbleToInteract()
     {
-        return state == StateOfInteractableObject.Interactable && doorTrigger.isPlayerOnTrigger == true;
+        return state == StateOfInteractableObject.Interactable && trigger.isPlayerOnTrigger == true;
     }
 }

@@ -1,7 +1,7 @@
 using UnityEngine;
 
 [RequireComponent(typeof(BoxCollider2D))]
-public class DoorTrigger : MonoBehaviour
+public class Trigger : MonoBehaviour
 {
     public bool isPlayerOnTrigger = false;
     public void OnTriggerEnter2D(Collider2D other)

@@ -2,19 +2,22 @@ using System;
 using System.Collections.Generic;
 using System.Xml.XPath;
 using NUnit.Framework;
+using UnityEditor.Rendering;
 using UnityEngine;
 using UnityEngine.UIElements;
-
 
 public class PlayerCharacter : Character
 {
     [Header("PlayerSetting")]
-    [SerializeField] public List<Item> items;
+    [SerializeField] public PlayerInventory inventory;
     [SerializeField] private int currxp;
     [SerializeField] private int maxXP;
     [SerializeField] private int currmana;
     [SerializeField] private int maxmana;
     [SerializeField] private List<Upgrade> levelUpgrades = new List<Upgrade>();
+
+
+
     protected override void Death()
     {
         if (IsDead())
@@ -168,14 +171,11 @@ public class PlayerCharacter : Character
 
     public void AddItem(Item item)
     {
-        items.Add(item);
-        item.OnEquip(this);
+        inventory.Add(item);
     }
 
     public void DropItem(Item item)
     {
-        items.Remove(items.FindLast(i=>i==item));
-        item.DropItem();
-        item.OnUnequip(this);
+        inventory.Remove(item);
     }
 }
