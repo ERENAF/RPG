@@ -1,6 +1,7 @@
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "Upgrade",menuName = "Upgrade")]
+
 public class Upgrade : ScriptableObject
 {
     [SerializeField] public int changeAtk;
