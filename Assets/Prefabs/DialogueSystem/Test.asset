@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35748890a827a91428ab6357fdcbeb71, type: 3}
+  m_Name: Test
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueTree
+  startNodeID: node_1
+  nodes:
+  - nodeID: node_1
+    dialogueLine: TestTextNode_1
+    characterName: TestName1
+    characterImage: {fileID: 21300000, guid: c4e59f92cc4f40e468de8daedd14bbd3, type: 3}
+    nextNodeID: node_2
+    options:
+    - dialogueLine: TestOption_1_TextNode_1
+      nextNodeID: node_2
+      type: 0
+    - dialogueLine: TestOption_2_TextNode_1
+      nextNodeID: 
+      type: 2
+    - dialogueLine: TestOption_3_TextNode_1
+      nextNodeID: 
+      type: 2
+  - nodeID: node_2
+    dialogueLine: TestTextNode_2
+    characterName: TestName2
+    characterImage: {fileID: 21300000, guid: c4e59f92cc4f40e468de8daedd14bbd3, type: 3}
+    nextNodeID: END
+    options: []
