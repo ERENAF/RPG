@@ -17,6 +17,7 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI characterNameText;
     [SerializeField] private TextMeshProUGUI dialogueText;
     [SerializeField] private Image characterImage;
+    [SerializeField] public BattleStarter battleStarter;
     [SerializeField] private GameObject[] optionButtons;
 
     private DialogueNode currentNode;
@@ -86,6 +87,12 @@ public class DialogueManager : MonoBehaviour
         if (targetNodeID == "END")
         {
             EndDialogue();
+            return;
+        }
+        if (targetNodeID == "FIGHT")
+        {
+            EndDialogue();
+            battleStarter.StartBattle();
             return;
         }
         currentNode = dialogueTree.GetNode(targetNodeID);

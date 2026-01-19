@@ -1,8 +1,9 @@
-using System;
-using Unity.Burst.Intrinsics;
+using System.Data.Common;
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
-public abstract class Character : MonoBehaviour
+public class Character : MonoBehaviour
 {
     [Header("CharacterSetting")]
 
@@ -16,6 +17,12 @@ public abstract class Character : MonoBehaviour
     [SerializeField] protected int atk;
     [SerializeField] protected int magic;
     [SerializeField] protected int level;
+
+    [Header("HUD References")]
+    public Sprite characterImage;
+    public Slider hpSlider;
+    public TextMeshProUGUI hpText;
+
 
     /*characterName*/
 
@@ -38,15 +45,31 @@ public abstract class Character : MonoBehaviour
     {
         change = Mathf.Abs(change);
         currhp = Mathf.Min(currhp+change,maxhp);
+        ChangeHPUI();
     }
     public void DecreaseCurrHP(int change)
     {
         change = Mathf.Abs(change);
         currhp = Mathf.Max(currhp - Mathf.Max(change-armor,0),0);
+        ChangeHPUI();
+    }
+
+    private void ChangeHPUI()
+    {
+        if (hpSlider != null)
+        {
+            hpSlider.maxValue = maxhp;
+            hpSlider.value = currhp;
+        }
+        if (hpText != null)
+        {
+            hpText.text = $"{currhp}|{maxhp}";
+        }
     }
     public void GetFullHP()
     {
         currhp = maxhp;
+        ChangeHPUI();
     }
 
     /*death and alive checkfunctions*/
@@ -59,7 +82,7 @@ public abstract class Character : MonoBehaviour
     {
         return currhp <=0;
     }
-    protected abstract void Death();
+    protected virtual void Death() {}
 
     /*maxHP functions*/
 
@@ -76,11 +99,13 @@ public abstract class Character : MonoBehaviour
         change = Mathf.Abs(change);
         maxhp = Mathf.Max(0, maxhp-change);
         currhp = Mathf.Min(maxhp,currhp);
+        ChangeHPUI();
     }
     public void IncreaseMaxHP(int change)
     {
         change = Mathf.Abs(change);
         maxhp += change;
+        ChangeHPUI();
     }
 
     /*armor*/
