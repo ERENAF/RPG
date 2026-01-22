@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -16,6 +17,9 @@ public class PlayerCharacter : Character
     [Header("Player HUD Extra")]
     public Slider manaSlider;
     public TextMeshProUGUI manaText;
+
+    [Header("Player Drop Config")]
+    public Transform dropPoint;
 
     protected override void Death()
     {
@@ -193,6 +197,6 @@ public class PlayerCharacter : Character
 
     public void DropItem(Item item)
     {
-        inventory.Remove(item);
+        inventory.Remove(item,dropPoint);
     }
 }

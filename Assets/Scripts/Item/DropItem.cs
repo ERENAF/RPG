@@ -1,6 +1,3 @@
-using System;
-using TMPro;
-using Unity.VisualScripting;
 using UnityEngine;
 [RequireComponent(typeof(BoxCollider2D))]
 [RequireComponent(typeof(Rigidbody2D))]
@@ -8,7 +5,12 @@ public class DropItem : MonoBehaviour
 {
     [SerializeField] protected Item Item;
     [SerializeField] protected string tag_ = "Player";
-    [SerializeField] protected string describtion;
+    [SerializeField] protected InventoryUI inventoryUI;
+
+    void Start()
+    {
+        inventoryUI = FindAnyObjectByType<InventoryUI>();
+    }
 
     private void OnTriggerStay2D(Collider2D other)
     {
@@ -23,6 +25,7 @@ public class DropItem : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.F))
             {
                 other.GetComponent<PlayerCharacter>().AddItem(Item);
+                inventoryUI.UpdateInventory();
                 Destroy(gameObject);
             }
         }

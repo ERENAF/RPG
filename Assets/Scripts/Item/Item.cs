@@ -14,9 +14,6 @@ public enum ItemType
 {
     active,
     passive,
-    weapon,
-    equipment,
-    consumable,
     questItem
 }
 
@@ -31,13 +28,15 @@ public abstract class Item : ScriptableObject
     public int charges = 0;
     public int maxChargers = 0;
 
+    public Upgrade upgrade;
+
     public abstract void OnEquip(PlayerCharacter character);
     public abstract void OnUnequip(PlayerCharacter character);
     public abstract bool CanUse(PlayerCharacter character);
     public abstract void Use(PlayerCharacter character);
 
-    public void DropItem()
+    public void DropItem(Transform dropPoint)
     {
-
+        Instantiate(dropItem,dropPoint.position,dropPoint.rotation);
     }
 }

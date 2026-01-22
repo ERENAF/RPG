@@ -1,12 +1,8 @@
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "ItemWithOnlyStatUpgrade", menuName = "Items/Equipment/ItemWithOnlyStatUpgrade")]
-public class ItemWithStatUpgrade : Item
+[CreateAssetMenu(fileName = "SimpleItem", menuName = "Items/Item/SimpleItem")]
+public class SimpleItem : Item
 {
-    [Header(" config")]
-
-    public Upgrade upgrade;
-
     public override void OnEquip(PlayerCharacter character)
     {
         character.IncreaseStats(upgrade);
@@ -15,6 +11,7 @@ public class ItemWithStatUpgrade : Item
     {
         character.DecreaseStats(upgrade);
     }
+
     public override bool CanUse(PlayerCharacter character)
     {
         return false;

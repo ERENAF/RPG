@@ -8,9 +8,6 @@ public class PlayerInventory : ScriptableObject
 {
     [SerializeField] private List<Item> activeItems = new List<Item>();
     [SerializeField] private List<Item> passiveItems = new List<Item>();
-    [SerializeField] private List<Item> weaponItems = new List<Item>();
-    [SerializeField] private List<Item> equipmentItems = new List<Item>();
-    [SerializeField] private List<Item> consumableItems = new List<Item>();
     [SerializeField] private List<Item> questItems = new List<Item>();
 
     [SerializeField] public PlayerCharacter player;
@@ -21,10 +18,10 @@ public class PlayerInventory : ScriptableObject
         item.OnEquip(player);
     }
 
-    public void Remove(Item item)
+    public void Remove(Item item, Transform dropPoint)
     {
         DropItem(item);
-        item.DropItem();
+        item.DropItem(dropPoint);
     }
 
     public List<Item> FindListItem(ItemType type)
@@ -35,12 +32,6 @@ public class PlayerInventory : ScriptableObject
                 return activeItems;
             case ItemType.passive:
                 return passiveItems;
-            case ItemType.weapon:
-                return weaponItems;
-            case ItemType.equipment:
-                return equipmentItems;
-            case ItemType.consumable:
-                return consumableItems;
             case ItemType.questItem:
                 return questItems;
             default: return null;
@@ -54,12 +45,6 @@ public class PlayerInventory : ScriptableObject
                 return activeItems;
             case ItemType.passive:
                 return passiveItems;
-            case ItemType.weapon:
-                return weaponItems;
-            case ItemType.equipment:
-                return equipmentItems;
-            case ItemType.consumable:
-                return consumableItems;
             case ItemType.questItem:
                 return questItems;
             default: return null;

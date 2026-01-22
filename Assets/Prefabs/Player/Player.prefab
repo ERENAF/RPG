@@ -38,6 +38,7 @@ Transform:
   m_Children:
   - {fileID: 3569033836252713805}
   - {fileID: 8890300846186314904}
+  - {fileID: 5495204116865529689}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &5590609733483334741
@@ -191,13 +192,18 @@ MonoBehaviour:
   atk: 6
   magic: 15
   level: 1
-  items:
-  - {fileID: 11400000, guid: 926f3e33e3c5d4d409ab109a9d7cfdd3, type: 2}
+  characterImage: {fileID: 0}
+  hpSlider: {fileID: 0}
+  hpText: {fileID: 0}
+  inventory: {fileID: 0}
   currxp: 0
   maxXP: 100
   currmana: 100
   maxmana: 100
   levelUpgrades: []
+  manaSlider: {fileID: 0}
+  manaText: {fileID: 0}
+  dropPoint: {fileID: 0}
 --- !u!61 &2099515566721593450
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -330,6 +336,37 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 0
   m_SpriteSortPoint: 0
+--- !u!1 &2602514486966597539
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5495204116865529689}
+  m_Layer: 0
+  m_Name: dropPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5495204116865529689
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2602514486966597539}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6173511054410377394}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7633365636480733159
 GameObject:
   m_ObjectHideFlags: 0
@@ -356,7 +393,7 @@ Transform:
   m_GameObject: {fileID: 7633365636480733159}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.53, y: 0.51, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 5, y: 5, z: 5}
   m_ConstrainProportionsScale: 1
   m_Children: []
