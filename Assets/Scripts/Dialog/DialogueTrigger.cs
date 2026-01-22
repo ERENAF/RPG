@@ -12,6 +12,7 @@ public class DialogueTrigger : MonoBehaviour
 {
     [SerializeField] private DialogueManager dialogueManager;
     public DialogueTree dialogueTree;
+    public BattleStarter battleStarter;
     public TriggerType triggerType;
 
     void Start()
@@ -23,6 +24,7 @@ public class DialogueTrigger : MonoBehaviour
     {
         if (other.CompareTag("Player") && triggerType == TriggerType.Enter)
         {
+            dialogueManager.battleStarter = battleStarter;
             dialogueManager.StartDialogue(dialogueTree);
         }
     }
@@ -31,6 +33,7 @@ public class DialogueTrigger : MonoBehaviour
     {
         if (other.CompareTag("Player") && triggerType == TriggerType.Stay && Input.GetKeyDown(KeyCode.F))
         {
+            dialogueManager.battleStarter = battleStarter;
             dialogueManager.StartDialogue(dialogueTree);
         }
     }
@@ -39,6 +42,7 @@ public class DialogueTrigger : MonoBehaviour
     {
         if (other.CompareTag("Player") && triggerType == TriggerType.Exit)
         {
+            dialogueManager.battleStarter = battleStarter;
             dialogueManager.StartDialogue(dialogueTree);
         }
     }

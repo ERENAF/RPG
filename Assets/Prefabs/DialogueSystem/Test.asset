@@ -28,7 +28,7 @@ MonoBehaviour:
       type: 2
     - dialogueLine: TestOption_3_TextNode_1
       nextNodeID: 
-      type: 2
+      type: 1
   - nodeID: node_2
     dialogueLine: TestTextNode_2
     characterName: TestName2

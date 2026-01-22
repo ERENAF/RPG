@@ -48,7 +48,7 @@ public class Option
     }
     private string OptionUseFight()
     {
-        return "END";
+        return "FIGHT";
     }
     private string OptionUseEnd()
     {

@@ -1,10 +1,7 @@
-using System;
 using System.Collections.Generic;
-using System.Xml.XPath;
-using NUnit.Framework;
-using UnityEditor.Rendering;
+using TMPro;
 using UnityEngine;
-using UnityEngine.UIElements;
+using UnityEngine.UI;
 
 public class PlayerCharacter : Character
 {
@@ -16,7 +13,9 @@ public class PlayerCharacter : Character
     [SerializeField] private int maxmana;
     [SerializeField] private List<Upgrade> levelUpgrades = new List<Upgrade>();
 
-
+    [Header("Player HUD Extra")]
+    public Slider manaSlider;
+    public TextMeshProUGUI manaText;
 
     protected override void Death()
     {
@@ -131,19 +130,35 @@ public class PlayerCharacter : Character
     {
         change = Mathf.Abs(change);
         currmana = Mathf.Min(currmana+change,maxmana);
+        ChangeManaUI();
     }
     public void DecreaseCurrMana(int change)
     {
         change = Mathf.Abs(change);
         currmana = Mathf.Max(currmana-change,maxmana);
+        ChangeManaUI();
     }
     public void GetFullMana()
     {
         currmana = maxmana;
+        ChangeManaUI();
     }
     public bool IsAbleToCastAbility(int manause)
     {
         return manause<=currmana;
+    }
+
+    private void ChangeManaUI()
+    {
+        if (manaSlider != null)
+        {
+            manaSlider.maxValue = maxmana;
+            manaSlider.value = currmana;
+        }
+        if (manaText != null)
+        {
+            manaText.text = $"{currmana}|{maxmana}";
+        }
     }
 
     /*maxmana*/
@@ -160,11 +175,13 @@ public class PlayerCharacter : Character
     {
         change = Mathf.Abs(change);
         maxmana += change;
+        ChangeManaUI();
     }
     public void DecreaseMaxMana(int change)
     {
         change = Mathf.Abs(change);
         maxmana = Mathf.Max(0,maxmana-change);
+        ChangeManaUI();
     }
 
     /*items*/
