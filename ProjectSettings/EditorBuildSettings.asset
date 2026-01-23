@@ -11,6 +11,18 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Test/Test2.unity
     guid: d73061982a9b4f448bf54e73ac09ab43
+  - enabled: 1
+    path: Assets/Scenes/Levels/World.unity
+    guid: 31ec9c6adf1ed834980ba852fc03e07b
+  - enabled: 1
+    path: Assets/Scenes/Levels/Doctor's_House.unity
+    guid: 23a984c188c37454092e16052d407eab
+  - enabled: 1
+    path: Assets/Scenes/Levels/Robbers_House.unity
+    guid: 1fbfc952a02ad0d4ea81887c54ec2eb5
+  - enabled: 1
+    path: Assets/Scenes/Levels/Magician_House.unity
+    guid: 15a4e514aeff97b4e9a5757445b3f79b
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0

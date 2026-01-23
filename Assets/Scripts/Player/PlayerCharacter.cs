@@ -193,10 +193,12 @@ public class PlayerCharacter : Character
     public void AddItem(Item item)
     {
         inventory.Add(item);
+        item.OnEquip(this);
     }
 
     public void DropItem(Item item)
     {
+        item.OnUnequip(this);
         inventory.Remove(item,dropPoint);
     }
 }

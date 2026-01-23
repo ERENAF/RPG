@@ -15,7 +15,6 @@ public class PlayerInventory : ScriptableObject
     public void Add(Item item)
     {
         AddItem(item);
-        item.OnEquip(player);
     }
 
     public void Remove(Item item, Transform dropPoint)

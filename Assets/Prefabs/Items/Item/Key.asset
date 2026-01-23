@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92c3b7dfbb2db7f47942cc0120ca355f, type: 3}
   m_Name: Key
   m_EditorClassIdentifier: Assembly-CSharp::QuestItem
-  itemname: Key
-  description: 
+  itemname: "\u041A\u043B\u044E\u0447"
+  description: "\u0435\u0441\u043B\u0438 \u0435\u0441\u0442\u044C \u043A\u043B\u044E\u0447,
+    \u0442\u043E \u0433\u0434\u0435 \u0434\u0432\u0435\u0440\u044C?"
   rarity: 0
   type: 2
   dropItem: {fileID: 5675413347162005617, guid: 73379feacf072f74fa4eb71b9ad24516, type: 3}

@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0426968bc6ca70749bf9288d76183732, type: 3}
+  m_Name: Mantia
+  m_EditorClassIdentifier: Assembly-CSharp::SimpleItem
+  itemname: "\u041C\u0430\u043D\u0442\u0438\u044F"
+  description: "\u0417\u0430\u0449\u0438\u0442\u0430 \u043E\u0442 \u043A\u043E\u0441\u044B\u0445
+    \u0432\u0437\u0433\u043B\u044F\u0434\u043E\u0432"
+  rarity: 1
+  type: 1
+  dropItem: {fileID: 5675413347162005617, guid: 7fb4f2e832dcfa14e9c932d66edbeab9, type: 3}
+  charges: 0
+  maxChargers: 0
+  upgrade:
+    changeAtk: 0
+    changeMaxHP: 0
+    changeArmor: 5
+    changeMagic: 0
+    changeMaxMana: 0

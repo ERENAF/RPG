@@ -7,10 +7,12 @@ public class Door : InteractableObject
 {
     [Header("Door's config")]
 
+    public bool isKeyNeeded = false;
     public QuestItem key;
     public KeyCode interactKey = KeyCode.F;
     public int SceneNum = -1;
     public string SceneStr;
+
 
     void Update()
     {
@@ -23,13 +25,21 @@ public class Door : InteractableObject
         {
             if (Input.GetKeyDown(interactKey))
             {
-                if (FindAnyObjectByType<PlayerCharacter>().inventory.FindListItem(key).Contains(key) || key == null)
+                if (isKeyNeeded)
                 {
-                    DoorInteracting();
+                    PlayerCharacter playerCharacter = FindAnyObjectByType<PlayerCharacter>();
+                    if (playerCharacter.inventory.FindListItem(key).Contains(key))
+                    {
+                        DoorInteracting();
+                    }
+                    else
+                    {
+                        NotKeyInteracting();
+                    }
                 }
                 else
                 {
-                    NotKeyInteracting();
+                    DoorInteracting();
                 }
             }
         }

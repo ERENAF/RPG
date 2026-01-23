@@ -17,12 +17,12 @@ MonoBehaviour:
     \u043F\u0430\u043B\u043A\u0430"
   rarity: 0
   type: 1
-  dropItem: {fileID: 0}
+  dropItem: {fileID: 5675413347162005617, guid: e3066a7e8f9f98e45b616873605546cc, type: 3}
   charges: 0
   maxChargers: 0
   upgrade:
     changeAtk: 0
     changeMaxHP: 0
     changeArmor: 0
-    changeMagic: 0
+    changeMagic: 5
     changeMaxMana: 0
