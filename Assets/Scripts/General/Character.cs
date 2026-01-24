@@ -82,7 +82,7 @@ public class Character : MonoBehaviour
     {
         return currhp <=0;
     }
-    protected virtual void Death() {}
+    public virtual void Death() {}
 
     /*maxHP functions*/
 

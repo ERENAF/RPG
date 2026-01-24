@@ -21,7 +21,12 @@ public class PlayerCharacter : Character
     [Header("Player Drop Config")]
     public Transform dropPoint;
 
-    protected override void Death()
+    void Start()
+    {
+
+    }
+
+    public override void Death()
     {
         if (IsDead())
         {
@@ -139,7 +144,7 @@ public class PlayerCharacter : Character
     public void DecreaseCurrMana(int change)
     {
         change = Mathf.Abs(change);
-        currmana = Mathf.Max(currmana-change,maxmana);
+        currmana = Mathf.Max(currmana-change,0);
         ChangeManaUI();
     }
     public void GetFullMana()

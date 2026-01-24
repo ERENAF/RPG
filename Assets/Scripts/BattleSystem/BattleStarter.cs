@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class BattleStarter : MonoBehaviour
 {
-    public GameObject enemyPrefab;
+    public Sprite enemySprite;
     public Character enemyCharacter;
     private BattleManager battleManager;
 
@@ -13,7 +13,7 @@ public class BattleStarter : MonoBehaviour
 
     public void StartBattle()
     {
-        battleManager.enemyPrefab = enemyPrefab;
+        battleManager.enemySprite = enemySprite;
         battleManager.enemyCharacter = enemyCharacter;
         battleManager.StartFight();
     }
