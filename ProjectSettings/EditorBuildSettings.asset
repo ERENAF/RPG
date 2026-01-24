@@ -23,6 +23,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Levels/Magician_House.unity
     guid: 15a4e514aeff97b4e9a5757445b3f79b
+  - enabled: 1
+    path: Assets/Scenes/Menu/Menu.unity
+    guid: 0d80d7162d6f62b47a022f5a50b9173b
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0

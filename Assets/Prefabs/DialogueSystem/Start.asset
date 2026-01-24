@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35748890a827a91428ab6357fdcbeb71, type: 3}
+  m_Name: Start
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueTree
+  startNodeID: node_0
+  nodes:
+  - nodeID: node_0
+    dialogueLine: "\u041E\u0439, \u0433\u043E\u043B\u043E\u0432\u0430 \u0431\u043E\u043B\u0438\u0442,
+      \u043D\u0430\u0434\u043E \u043A\u0443\u043F\u0438\u0442\u044C \u0442\u0430\u0431\u043B\u0435\u0442\u043A\u0438."
+    characterName: "\u0414\u0435\u0434"
+    characterImage: {fileID: 21300000, guid: 0c8fbe08123b4044988a314ac8c6b7f0, type: 3}
+    nextNodeID: 
+    options:
+    - dialogueLine: "\u0418\u0434\u0442\u0438"
+      nextNodeID: 
+      type: 2

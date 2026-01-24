@@ -1,3 +1,4 @@
+using System.Data;
 using System.Data.Common;
 using TMPro;
 using UnityEngine;
@@ -82,7 +83,10 @@ public class Character : MonoBehaviour
     {
         return currhp <=0;
     }
-    public virtual void Death() {}
+    public virtual void Death()
+    {
+        Destroy(gameObject);
+    }
 
     /*maxHP functions*/
 

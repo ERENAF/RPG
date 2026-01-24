@@ -68,4 +68,10 @@ public class PlayerInventory : ScriptableObject
             }
         }
     }
+
+    public void UseItem(Item item)
+    {
+        item.Use(player);
+        DropItem(item);
+    }
 }

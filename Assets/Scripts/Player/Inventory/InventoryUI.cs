@@ -128,7 +128,7 @@ public class InventoryUI : MonoBehaviour
         // Проверяем, можно ли использовать предмет
         if (item.CanUse(playerInventory.player))
         {
-            item.Use(playerInventory.player);
+            playerInventory.UseItem(item);
             UpdateInventory();
         }
     }

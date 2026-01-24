@@ -20,6 +20,8 @@ public class PlayerCharacter : Character
 
     [Header("Player Drop Config")]
     public Transform dropPoint;
+    [Header("PlayerDeathMenu")]
+    public GameObject DeathUI;
 
     void Start()
     {
@@ -30,7 +32,8 @@ public class PlayerCharacter : Character
     {
         if (IsDead())
         {
-            Debug.Log("Смерть");
+            Time.timeScale = 0f;
+            DeathUI.SetActive(true);
         }
     }
 

@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 2099515566721593450}
   - component: {fileID: 1419201209634581893}
   - component: {fileID: 1686779299115385586}
+  - component: {fileID: 3712606172787542731}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -192,10 +193,10 @@ MonoBehaviour:
   atk: 6
   magic: 15
   level: 1
-  characterImage: {fileID: 0}
+  characterImage: {fileID: 21300000, guid: 0c8fbe08123b4044988a314ac8c6b7f0, type: 3}
   hpSlider: {fileID: 0}
   hpText: {fileID: 0}
-  inventory: {fileID: 0}
+  inventory: {fileID: 11400000, guid: 5a05e36b6ebf6d142a32457a9ebc8337, type: 2}
   currxp: 0
   maxXP: 100
   currmana: 100
@@ -203,7 +204,8 @@ MonoBehaviour:
   levelUpgrades: []
   manaSlider: {fileID: 0}
   manaText: {fileID: 0}
-  dropPoint: {fileID: 0}
+  dropPoint: {fileID: 5495204116865529689}
+  DeathUI: {fileID: 0}
 --- !u!61 &2099515566721593450
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -336,6 +338,19 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 0
   m_SpriteSortPoint: 0
+--- !u!114 &3712606172787542731
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2450245873982152614}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37df9ac0a92d1ca4abd0f4b462ce469f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerMenuManager
+  inventoryUI: {fileID: 0}
 --- !u!1 &2602514486966597539
 GameObject:
   m_ObjectHideFlags: 0

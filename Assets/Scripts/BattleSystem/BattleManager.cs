@@ -37,6 +37,7 @@ public class BattleManager : MonoBehaviour
     {
         Debug.Log("Начало драки");
         state = BattleState.Start;
+        Time.timeScale = 0f;
         battleUI.SetActive(true);
         StartCoroutine(SetupBattle());
     }
@@ -58,7 +59,7 @@ public class BattleManager : MonoBehaviour
 
         battleText.text = "БИТВА НАЧИНАЕТСЯ!";
 
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSecondsRealtime(2f);
 
         state = BattleState.Player_Turn;
         PlayerTurn();
@@ -100,7 +101,7 @@ public class BattleManager : MonoBehaviour
     {
         enemyCharacter.DecreaseCurrHP(playerCharacter.GetAtk());
         battleText.text = $"{playerCharacter.name} атакует!";
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSecondsRealtime(2f);
 
         CheckEnemyStatus();
     }
@@ -114,14 +115,14 @@ public class BattleManager : MonoBehaviour
             enemyCharacter.DecreaseCurrHP(playerCharacter.GetMagic());
             battleText.text = $"{playerCharacter.name} использует магическую атаку!";
 
-            yield return new WaitForSeconds(2f);
+            yield return new WaitForSecondsRealtime(2f);
 
             CheckEnemyStatus();
         }
         else
         {
             battleText.text = "Недостаточно маны для магической атаки!";
-            yield return new WaitForSeconds(1.5f);
+            yield return new WaitForSecondsRealtime(1.5f);
 
             PlayerTurn();
         }
@@ -166,10 +167,6 @@ public class BattleManager : MonoBehaviour
             }
 
             Button useButton = emptySlot.transform.Find("UseButton")?.GetComponent<Button>();
-            if (useButton != null)
-            {
-                useButton.interactable = false;
-            }
 
             currentItemSlots.Add(emptySlot);
             return;
@@ -227,7 +224,7 @@ public class BattleManager : MonoBehaviour
     IEnumerator AfterItemUse()
     {
         battleText.text = $"{playerCharacter.name} использует предмет!";
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSecondsRealtime(1.5f);
 
         ClearItemSlots();
 
@@ -268,7 +265,7 @@ public class BattleManager : MonoBehaviour
     {
         Debug.Log("Вражескийход");
         battleText.text = "Вражеский ход!";
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSecondsRealtime(1f);
 
         int typeAttack = Random.Range(0, 2);
         switch (typeAttack)
@@ -283,7 +280,7 @@ public class BattleManager : MonoBehaviour
                 break;
         }
 
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSecondsRealtime(1f);
 
         if (playerCharacter.IsDead())
         {
@@ -306,7 +303,6 @@ public class BattleManager : MonoBehaviour
                 break;
             case BattleState.Lose:
                 battleText.text = "ВЫ ПРОИГРАЛИ(";
-                playerCharacter.Death();
                 break;
         }
 
@@ -322,9 +318,13 @@ public class BattleManager : MonoBehaviour
 
     IEnumerator CloseBattleUI()
     {
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSecondsRealtime(2f);
         battleUI.SetActive(false);
         Time.timeScale = 1f;
+        if (state == BattleState.Lose)
+        {
+            playerCharacter.Death();
+        }
     }
 
 }
